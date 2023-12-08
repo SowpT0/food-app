@@ -16,11 +16,11 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route
           path="/Menu"
-          element={<MenuPage cart={cart} setCart={setCart} />} // Pass cart and setCart as props
+          element={<MenuPage cart={cart} setCart={setCart} />}
         />
         <Route
           path="/Cart"
-          element={<CartPage cart={cart} />} // Pass cart as a prop
+          element={<CartPage cart={cart} />}
         />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<LoginPage />} />
