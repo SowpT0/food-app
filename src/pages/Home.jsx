@@ -1,4 +1,5 @@
 import '../index.css';
+import {Link} from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -10,7 +11,7 @@ const Home = () => {
             <p className="lead text-white">Different kinds of donuts for different people</p>
             <p className="text-white">Order online and satisfy your sweet cravings.</p>
             <br></br>
-            <a href="/menu" className="btn btn-primary btn-lg bg-primary hover-bg-danger"style={{ transition: 'background-color 0.3s ease' }}>Explore the Menu</a>
+            <Link to="/menu" className="btn btn-primary btn-lg bg-primary hover-bg-danger"style={{ transition: 'background-color 0.3s ease' }}>Explore the Menu</Link>
 
           </div>
         </div>
