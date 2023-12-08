@@ -14,7 +14,7 @@ const About = () => {
             love and attention to ensure a delicious experience for our customers.
           </p>
           <p>
-            Whether you`&apos`re a fan of classic glazed donuts or adventurous enough to
+            Whether you&apos;re a fan of classic glazed donuts or adventurous enough to
             try unique and creative flavors, we have something for everyone.
           </p>
         </div>
