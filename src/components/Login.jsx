@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
-/*import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../firebase';*/
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../firebase';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -9,7 +9,7 @@ const Login = () => {
 
     const handleLogin = async () => {
         try {
-        /*  await signInWithEmailAndPassword(auth, email, password);*/
+          await signInWithEmailAndPassword(auth, email, password);
         } catch (error) {
             console.error('Login Error:', error.message);
         }
