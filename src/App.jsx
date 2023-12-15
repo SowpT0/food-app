@@ -4,12 +4,14 @@ import Navbar from './components/navbar';
 import Home from './pages/Home';
 import About from './pages/About';
 import MenuPage from './pages/MenuPage';
-import LoginPage from './pages/LoginPage';
+import Login from './components/Login';
 import CartPage from './pages/CartPage';
+import {AuthProvider} from "./components/AuthProvider"
 
 const App = () => {
   const  [cart,setCart]  = useState([]);
   return (
+    <AuthProvider>
     <div className = "pink-background">
       <Navbar />
       <Routes>
@@ -23,9 +25,10 @@ const App = () => {
           element={<CartPage cart={cart} />}
         />
         <Route path="/about" element={<About />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </div>
+    </AuthProvider>
   );
 };
 
