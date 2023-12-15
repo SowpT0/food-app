@@ -3,7 +3,6 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { initializeApp } from 'firebase/app';
 import { app } from './firebase';
 
 import App from './App.jsx';
