@@ -26,6 +26,7 @@ const App = () => {
         />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/Home" element={<Home />} />
       </Routes>
     </div>
     </AuthProvider>

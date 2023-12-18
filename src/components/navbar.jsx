@@ -1,7 +1,24 @@
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../components/AuthProvider';
+import { signOut } from 'firebase/auth';
+import { auth } from '../firebase';
 import '../index.css';
 
 const Navbar = () => {
+  const { currentUser } = useContext(AuthContext);
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      console.log('Logout successful');
+      // You can add additional logic after successful logout if needed
+    } catch (error) {
+      console.error('Logout Error:', error.message);
+      // Handle logout error if needed
+    }
+  };
+
   return (
     <nav className="navbar navbar-expand-lg cyan-bg">
       <div className="container">
@@ -42,9 +59,15 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/login">
-                Login
-              </Link>
+              {currentUser ? (
+                <Link className="nav-link" to="/" onClick={handleLogout}>
+                  Logout
+                </Link>
+              ) : (
+                <Link className="nav-link" to="/login">
+                  Login
+                </Link>
+              )}
             </li>
           </ul>
         </div>
