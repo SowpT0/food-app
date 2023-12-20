@@ -1,10 +1,16 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 const CartPage = () => {
+  const navigate = useNavigate();
   const [cart, setCart] = useState([]);
+
+  const handleCheckout = () => {
+    // Navigate to the checkout page and pass the cart data through state
+    navigate('/checkoutpage', { state: { cart: cart } });
+  };
 
   useEffect(() => {
     // Fetch cart items from the API
@@ -105,6 +111,9 @@ const CartPage = () => {
       </ul>
       <div className="text-right mt-3">
         <p>Total: {formatPrice(cart.reduce((total, item) => total + item.price * item.quantity, 0))}</p>
+        <button className="btn btn-success" onClick={handleCheckout}>
+          Checkout
+        </button>
       </div>
       <Link to="/menu">Back to Menu</Link>
     </div>
