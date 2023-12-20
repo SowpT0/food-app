@@ -11,7 +11,7 @@ const MenuPage = ({ cart, setCart }) => {
   const [notification, setNotification] = useState('');
 
   useEffect(() => {
-    // Fetch cart items from the API
+    
     fetch('https://capstone-project-api-shaunteoh1.sigma-school-full-time-capst.repl.co/api/cart')
       .then((response) => response.json())
       .then((data) => setCart(data))
@@ -48,19 +48,19 @@ const MenuPage = ({ cart, setCart }) => {
         });
       }
 
-      // Fetch the updated cart after making changes
+      
       const response = await fetch('https://capstone-project-api-shaunteoh1.sigma-school-full-time-capst.repl.co/api/cart');
       const data = await response.json();
       setCart(data);
 
-      // Set notification
+      
       setNotification('Item added to cart successfully');
       setTimeout(() => {
         setNotification('');
       }, 3000);
     } catch (error) {
       console.error('Error updating quantity:', error);
-      // Set an error notification if needed
+      
       setNotification('Failed to add item to cart');
     }
   };

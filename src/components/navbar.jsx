@@ -12,10 +12,10 @@ const Navbar = () => {
     try {
       await signOut(auth);
       console.log('Logout successful');
-      // You can add additional logic after successful logout if needed
+      
     } catch (error) {
       console.error('Logout Error:', error.message);
-      // Handle logout error if needed
+      
     }
   };
 
@@ -51,6 +51,11 @@ const Navbar = () => {
             <li className="nav-item">
               <Link className="nav-link" to="/cart">
                 Cart
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/checkoutpage">
+                Checkout
               </Link>
             </li>
             <li className="nav-item">

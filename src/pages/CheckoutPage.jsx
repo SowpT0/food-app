@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 
 const CheckoutPage = () => {
-  // Retrieve cart data from the location state
+  
   const location = useLocation();
   const cart = location.state && location.state.cart ? location.state.cart : [];
 

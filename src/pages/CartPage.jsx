@@ -8,12 +8,12 @@ const CartPage = () => {
   const [cart, setCart] = useState([]);
 
   const handleCheckout = () => {
-    // Navigate to the checkout page and pass the cart data through state
+    
     navigate('/checkoutpage', { state: { cart: cart } });
   };
 
   useEffect(() => {
-    // Fetch cart items from the API
+   
     fetch('https://capstone-project-api-shaunteoh1.sigma-school-full-time-capst.repl.co/api/cart')
       .then((response) => response.json())
       .then((data) => setCart(data))
@@ -21,13 +21,13 @@ const CartPage = () => {
   }, []);
 
   const handleDeleteItem = (itemId) => {
-    // Delete item from the cart using the API
+    
     fetch(`https://capstone-project-api-shaunteoh1.sigma-school-full-time-capst.repl.co/api/cart/${itemId}`, {
       method: 'DELETE',
     })
       .then((response) => response.json())
       .then(() => {
-        // Refresh the cart after deleting
+       
         fetch('https://capstone-project-api-shaunteoh1.sigma-school-full-time-capst.repl.co/api/cart')
           .then((response) => response.json())
           .then((data) => setCart(data))
@@ -39,7 +39,7 @@ const CartPage = () => {
   };
 
   const handleUpdateQuantity = (itemId, newQuantity) => {
-    // Update the quantity of an item in the cart using the API
+    
     fetch(`https://capstone-project-api-shaunteoh1.sigma-school-full-time-capst.repl.co/api/cart/${itemId}`, {
       method: 'PUT',
       headers: {
@@ -49,7 +49,7 @@ const CartPage = () => {
     })
       .then((response) => response.json())
       .then(() => {
-        // Refresh the cart after updating quantity
+        
         fetch('https://capstone-project-api-shaunteoh1.sigma-school-full-time-capst.repl.co/api/cart')
           .then((response) => response.json())
           .then((data) => setCart(data))
