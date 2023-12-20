@@ -6,7 +6,8 @@ import About from './pages/About';
 import MenuPage from './pages/MenuPage';
 import Login from './components/Login';
 import CartPage from './pages/CartPage';
-import {AuthProvider} from "./components/AuthProvider"
+import {AuthProvider} from "./components/AuthProvider";
+import Register from './components/Register'
 
 const App = () => {
   const  [cart,setCart]  = useState([]);
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Home" element={<Home />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </div>
     </AuthProvider>
