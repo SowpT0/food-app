@@ -92,7 +92,7 @@ const Home = () => {
 <br></br>
       <GoogleMapComponent />
       <br></br>
-      {/* Random Donut Button */}
+      {}
       <div className="container mt-5">
   <div className="row">
     <div className="col-md-6 offset-md-3 text-center text-white">

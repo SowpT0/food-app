@@ -19,25 +19,25 @@ const ProfilePage = () => {
     const auth = getAuth();
     const user = auth.currentUser;
 
-    // Upload image to Firebase Storage
+   
     const storageRef = ref(getStorage(), `profile_images/${user.uid}`);
     await uploadBytes(storageRef, image);
 
-    // Get the download URL of the uploaded image
+    
     const downloadURL = await getDownloadURL(storageRef);
 
-    // Update user profile with the new photo URL
+    
     await updateProfile(user, {
       photoURL: downloadURL,
     });
 
-    // Update the current user in the AuthContext
+   
     updateCurrentUser({
       ...currentUser,
       photoURL: downloadURL,
     });
 
-    // Reset the image state
+ 
     setImage(null);
   };
 

@@ -22,7 +22,7 @@ const Register = () => {
   };
 
   const handleClick = () => {
-    // Only allow registration if there is no current user
+    
     if (!currentUser) {
       handleRegister();
     }
