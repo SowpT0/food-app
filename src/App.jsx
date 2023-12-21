@@ -9,6 +9,8 @@ import CartPage from './pages/CartPage';
 import {AuthProvider} from "./components/AuthProvider";
 import Register from './components/Register';
 import CheckoutPage from './pages/CheckoutPage'
+import ProfilePage from './pages/ProfilePage';
+
 
 const App = () => {
   const  [cart,setCart]  = useState([]);
@@ -31,6 +33,7 @@ const App = () => {
         <Route path="/Home" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/checkoutpage" element={<CheckoutPage />} />
+        <Route path="/profilepage" element={<ProfilePage />} />
       </Routes>
     </div>
     </AuthProvider>
